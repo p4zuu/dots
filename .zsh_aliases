@@ -1,0 +1,7 @@
+DOTFILES="/home/tleroy/Tools/dots/"
+
+alias isc="osc -A https://api.suse.de"
+
+if [ -f $DOTFILES/.im_aliases ];
+	then . $DOTFILES/.im_aliases
+fi
