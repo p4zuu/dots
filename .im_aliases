@@ -38,3 +38,10 @@ alias git-find-file='f() {
                         done; :
                       }; f'
 
+alias isc="osc -A https://api.suse.de"
+alias qs="quilt setup *spec"
+
+# iver() { isc less "$1" "$2" "$2.spec"; }
+
+# alias over="osc less $1 $2 $2.spec | grep Version"
+
