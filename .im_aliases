@@ -45,3 +45,44 @@ alias qs="quilt setup *spec"
 
 # alias over="osc less $1 $2 $2.spec | grep Version"
 
+# Search for packages in IBS and OBS
+alias se='h() { echo "$1" | grep -qE  "^#.*" && return
+                echo "$1" | grep -qE  "No matches found for|matches for" && return
+                echo "$1" | grep -qE  "^$" && return
+                echo "$1" | grep -qE  "^home:" && return
+                echo "$1" | grep -qE  "^PTF:" && return
+                echo "$1" | grep -qE  "^SUSE:Maintenance:" && return
+                echo "$1" | grep -qE  "^openSUSE:Maintenance:" && return
+                echo "$1" | grep -qE  ".*[_\.\-]+[0-9]{2,}$" && return
+                echo "$1" | grep -qE  "^SUSE:openSUSE:" && return
+                echo "$1" | grep -qE  "^SUSE:SLE-9" && return
+                echo "$1" | grep -qE  "^SUSE:SLE-10" && return
+                echo "$1" | grep -qE  "^DISCONTINUED:" && return
+                echo "$1" | grep -qE  "^openSUSE:1" && return
+                echo "$1" | grep -qE  "^openSUSE:Leap:15.[0-2]." && return
+                echo "$1" | grep -iqE "^Devel:" && return
+                echo "$1" | grep -qE  "^YaST:" && return
+                echo "$1" | grep -qE  "^openSUSE:Evergreen" && return
+                echo "$1" | grep -qE  "^openSUSE:Leap:42" && return
+                echo "$1" | grep -qE  "^QA:" && return
+                echo "$1" | grep -qE  "^openSUSE:Dropped" && return
+                echo "$1" | grep -qE  "^Maemo:" && return
+                echo "$1" | grep -qE  "^OBS:" && return
+                echo "$1" | grep -qE  "^SSL:" && return
+                echo "$1" | grep -qE  "^Scented:" && return
+                echo "  $1"
+          };
+          f() {
+            local _s="-s"
+            if [[ "$1" == "-o" ]]; then
+              _s=""
+              shift
+            fi
+            echo "IBS:"
+            isc se $_s "$1" | while read -r line; do h "$line"; done
+            echo "OBS:"
+            osc se $_s "$1" | while read -r line; do h "$line"; done
+          }; f'
+
+alias co'co() { cdim; cd packages; mkdir $1; cd $1; secbox checkout_codestreams $1;}; co'
+
