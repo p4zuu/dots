@@ -109,3 +109,7 @@ match OverLength /\%81v.\+/
 " paste
 set paste
 
+" autowrap commit width
+au FileType gitcommit setlocal tw=70
+set colorcolumn=71
+

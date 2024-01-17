@@ -38,12 +38,6 @@ alias git-find-file='f() {
                         done; :
                       }; f'
 
-alias isc="osc -A https://api.suse.de"
-alias qs="quilt setup *spec"
-
-# iver() { isc less "$1" "$2" "$2.spec"; }
-
-# alias over="osc less $1 $2 $2.spec | grep Version"
 
 # Search for packages in IBS and OBS
 alias se='h() { echo "$1" | grep -qE  "^#.*" && return
@@ -84,5 +78,8 @@ alias se='h() { echo "$1" | grep -qE  "^#.*" && return
             osc se $_s "$1" | while read -r line; do h "$line"; done
           }; f'
 
-alias co'co() { cdim; cd packages; mkdir $1; cd $1; secbox checkout_codestreams $1;}; co'
+
+alias isc="osc -A https://api.suse.de"
+alias qs="quilt setup *spec"
+
 
