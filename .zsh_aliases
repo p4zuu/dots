@@ -6,3 +6,6 @@ fi
 
 # Light tweaks
 alias cats='highlight -O ansi --force -n'
+
+# pwn
+alias pwninit='pwninit --template-path ~/.config/pwninit-template.py'
