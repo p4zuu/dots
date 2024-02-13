@@ -17,7 +17,8 @@ filetype plugin indent on
 set modelines=0
 "
 " Show line numbers
-set number
+set number relativenumber
+set nu rnu
 "
 " Show file stats
 set ruler
