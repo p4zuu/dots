@@ -1,4 +1,5 @@
-DOTFILES="$HOME/Tools/dots"
+DOTFILES="~/Tools/dots"
+VMFOLDER="$HOME/Tools/VMs/"
 
 if [ -f $DOTFILES/.im_aliases ];
 	then . $DOTFILES/.im_aliases
@@ -9,3 +10,7 @@ alias cats='highlight -O ansi --force -n'
 
 # pwn
 alias pwninit='pwninit --template-path ~/.config/pwninit-template.py'
+
+# vms
+alias arch="cd $VMFOLDER/arch && vagrant ssh"
+
