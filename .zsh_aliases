@@ -12,5 +12,5 @@ alias cats='highlight -O ansi --force -n'
 alias pwninit='pwninit --template-path ~/.config/pwninit-template.py'
 
 # vms
-alias arch="cd $VMFOLDER/arch && vagrant ssh"
+alias archlinux="pushd $VMFOLDER/arch && vagrant ssh && popd"
 
