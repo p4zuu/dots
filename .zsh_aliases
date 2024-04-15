@@ -1,4 +1,4 @@
-DOTFILES="~/Tools/dots"
+DOTFILES="$HOME/Tools/dots"
 VMFOLDER="$HOME/Tools/VMs/"
 
 source "$DOTFILES/.im_aliases"
