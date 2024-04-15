@@ -97,6 +97,8 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 "let g:solarized_termtrans=1
 call plug#begin('~/.vim/plugged')
 Plug 'shapeoflambda/dark-purple.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme dark_purple
@@ -113,4 +115,7 @@ set paste
 " autowrap commit width
 au FileType gitcommit setlocal tw=70
 set colorcolumn=71
+
+" Rust
+let g:rustfmt_autosave = 1
 
