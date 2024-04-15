@@ -1,9 +1,7 @@
 DOTFILES="~/Tools/dots"
 VMFOLDER="$HOME/Tools/VMs/"
 
-if [ -f $DOTFILES/.im_aliases ];
-	then . $DOTFILES/.im_aliases
-fi
+source "$DOTFILES/.im_aliases"
 
 # Light tweaks
 alias cats='highlight -O ansi --force -n'
