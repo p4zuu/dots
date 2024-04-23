@@ -80,6 +80,6 @@ alias se='h() { echo "$1" | grep -qE  "^#.*" && return
 
 
 alias isc="osc -A https://api.suse.de"
-alias qs="quilt setup *spec"
+alias qs="squilt setup *spec"
 
 
