@@ -1,0 +1,11 @@
+layout                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                     
+keybinds {                                                                                                                                                                                                                           
+	unbind "Ctrl o" // Helix
+	session {
+	      bind "Ctrl m" { SwitchToMode "Normal"; }
+	}
+	shared_except "session" "locked" {
+	    bind "Ctrl m" { SwitchToMode "Session"; }
+	}
+} 
