@@ -1,19 +1,36 @@
 [[language]]
 name="rust"
-formatter = { command = "rustfmt" }
+formatter = { command = "rustfmt", args = ["--edition", "2021"]}
+# auto-format = true
+
+[language-server.rust-analyzer.config]
+check = { command = "clippy", args = ["--workspace", "--all-features"] }
 auto-format = true
+cargo = { allFeatures = true }
 
 [[language]]
 name="python"
 formatter = {command = 'black', args = ["--quiet", "-"]}
-auto-format = true
+# auto-format = true
 
 [[language]]
 name="c"
-formatter = { command = "clang-format-16" }
+language-servers = [ "clangd" ]
+formatter = { command = "clang-format-16" } #, args = ["--style=Google"]}
+# auto-format = true
+
+[[language]]
+name="cpp"
+language-servers = [ "clangd" ]
+formatter = { command = "clang-format-16" }#, args = ["--style=Google"]}
+# auto-format = true
+
+[[language]]
+name="markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
 auto-format = true
 
-[language-server.rust-analyzer.config]
-checkOnSave = {command = "clippy", extraArgs = ["--", "-W", "clippy::pedantic"]}
-cargo = {allFeatures = true}
-procMacro = {enable = true }
+[[language]]
+name="json"
+# formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
+# auto-format = true

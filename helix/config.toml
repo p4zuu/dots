@@ -3,3 +3,6 @@ theme = "catppuccin_macchiato"
 [editor]
 line-number = "relative"
 
+[keys.normal]
+A-d = "delete_selection"
+d = "delete_selection_noyank"
