@@ -9,3 +9,14 @@ keybinds {
 	    bind "Ctrl m" { SwitchToMode "Session"; }
 	}
 } 
+
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+}
