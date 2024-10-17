@@ -1,7 +1,10 @@
-theme = "catppuccin_macchiato"
+theme = "everforest_dark"
 
 [editor]
 line-number = "relative"
+
+[editor.auto-save]
+focus-lost = true
 
 [keys.normal]
 A-d = "delete_selection"

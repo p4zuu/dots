@@ -1,7 +1,7 @@
 [[language]]
 name="rust"
 formatter = { command = "rustfmt", args = ["--edition", "2021"]}
-# auto-format = true
+auto-format = true
 
 [language-server.rust-analyzer.config]
 check = { command = "clippy", args = ["--workspace", "--all-features"] }
@@ -11,19 +11,23 @@ cargo = { allFeatures = true }
 [[language]]
 name="python"
 formatter = {command = 'black', args = ["--quiet", "-"]}
-# auto-format = true
+auto-format = true
 
 [[language]]
 name="c"
 language-servers = [ "clangd" ]
-formatter = { command = "clang-format-16" } #, args = ["--style=Google"]}
-# auto-format = true
+formatter = { command = "clang-format-19" }
+auto-format = true
 
 [[language]]
 name="cpp"
 language-servers = [ "clangd" ]
-formatter = { command = "clang-format-16" }#, args = ["--style=Google"]}
-# auto-format = true
+formatter = { command = "clang-format-19" }
+auto-format = true
+
+[language-server.clangd]
+# args = [ "-std=c++23", "-Wc++23-extensions" ]
+# config = { "fallbackFlags" = [ "-std=c++23", "-Wc++23-extensions" ] }
 
 [[language]]
 name="markdown"
@@ -34,3 +38,19 @@ auto-format = true
 name="json"
 # formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
 # auto-format = true
+
+[[language]]
+name="typescript"
+language-servers = [ "typescript-language-server", "vscode-eslint-language-server" ]
+formatter = { command = "dprint", args = [ "fmt", "--stdin", "typescript" ] }
+
+[language.debugger]
+name = "lldb-vscode"
+transport = "stdio"
+command = "lldb-vscode"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ { name = "binary", completion = "filename" } ]
+args = { program = "{0}", initCommands = [ "command script import /usr/local/etc/lldb_vscode_rustc_primer.py" ] }
