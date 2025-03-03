@@ -1,10 +1,11 @@
-theme = "everforest_dark"
+theme = "catppuccin_frappe"
 
 [editor]
 line-number = "relative"
 
 [editor.auto-save]
 focus-lost = true
+true-color = true
 
 [keys.normal]
 A-d = "delete_selection"
