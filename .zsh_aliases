@@ -1,8 +1,3 @@
-DOTFILES="$HOME/Tools/dots"
-VMFOLDER="$HOME/Tools/VMs/"
-
-source "$DOTFILES/.im_aliases"
-
 # Light tweaks
 alias cats='highlight -O ansi --force -n'
 
@@ -10,5 +5,18 @@ alias cats='highlight -O ansi --force -n'
 alias pwninit='pwninit --template-path ~/.config/pwninit-template.py'
 
 # vms
-alias archlinux="pushd $VMFOLDER/arch && vagrant ssh && popd"
+is_vm_running() {
+	[[ `sudo virsh list --all | grep "$1"` == *"running"* ]] 
+}
+
+start_vm() {
+	if ! is_vm_running $1; then
+		sudo virsh start --domain $1
+		echo "$1 started."
+	else
+		echo "$1 already running."
+	fi
+}
+
+alias vm="start_vm $1"
 
