@@ -1,11 +1,11 @@
-theme = "catppuccin_frappe"
+theme = "catppuccin_macchiato"
 
 [editor]
 line-number = "relative"
+true-color = true
 
 [editor.auto-save]
 focus-lost = true
-true-color = true
 
 [keys.normal]
 A-d = "delete_selection"
